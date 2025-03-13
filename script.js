@@ -79,10 +79,16 @@ document.getElementById('fitness-form').addEventListener('submit', (e) => {
 function generateWorkoutPlan(gender, weight, height, age) {
     const bmi = (weight / ((height / 100) ** 2)).toFixed(1);
     let plan = `<p>Based on your BMI of ${bmi}:</p><ul>`;
+    
+    if (bmi < 14.5) {
+        plan += `
+        <li>Exercise is not recommended because weight gain at this stage is the overriding priority.</li>
+     `; 
+    }
 
     if (bmi < 18.5) {
         plan += `
-            <li>URL myURL = new URL("https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/strength-training/art-20046670")Strength Training 4x/week</li>
+            <li>Strength Training 4x/week</li>
             <li>Compound Exercises (Squats, Deadlifts)</li>
             <li>30-45 min sessions</li>
         `;
@@ -92,6 +98,7 @@ function generateWorkoutPlan(gender, weight, height, age) {
             <li>HIIT Sessions 2x/week</li>
             <li>Yoga/Stretching 1x/week</li>
         `;
+        
     } else {
         plan += `
             <li>Cardio 5x/week</li>
