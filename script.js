@@ -82,7 +82,7 @@ function generateWorkoutPlan(gender, weight, height, age) {
 
     if (bmi < 18.5) {
         plan += `
-            <li>Strength Training 4x/week</li>
+            <li>URL myURL = new URL("https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/strength-training/art-20046670")Strength Training 4x/week</li>
             <li>Compound Exercises (Squats, Deadlifts)</li>
             <li>30-45 min sessions</li>
         `;
